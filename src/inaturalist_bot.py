@@ -24,7 +24,7 @@ class InaturalistBot:
         print("Downloading images, this might take a few minutes...")
         for result in observations['results']:
             for image in result['photos']:
-                url = image['url']
+                url = image['url'].replace('square', 'medium')
                 response = requests.get(url)
                 if 'content-type' in response.headers.keys():
                     filetype = response.headers['content-type'].split('/')[1]
@@ -35,4 +35,8 @@ class InaturalistBot:
         return
 
 def start():
+    InaturalistBot()
+
+
+if __name__ == '__main__':
     InaturalistBot()
