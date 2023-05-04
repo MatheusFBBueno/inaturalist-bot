@@ -1,4 +1,3 @@
-import src
 import os
 import configparser
 

@@ -3,13 +3,13 @@ name = "inaturalist-bot"
 version = "0.1.0"
 description = ""
 authors = ["MatheusFBBueno <matfelipe2012@gmail.com>"]
-readme = "README.md"
-packages = [{include = "inaturalist_bot"}]
 
 [tool.poetry.dependencies]
 python = "^3.10"
 pyinaturalist = "^0.18.0"
 
+[tool.poetry.scripts]
+main = "src.inaturalist_bot:start"
 
 [build-system]
 requires = ["poetry-core"]

@@ -18,7 +18,10 @@ class InaturalistBot:
         pass
 
     def get_species_images(self):
+        print("Initiating image search")
         observations = get_species_observations(self.species_name, self.license, self.filter_larvae)
+        print(f'Found observations: {len(observations["results"])}')
+        print("Downloading images, this might take a few minutes...")
         for result in observations['results']:
             for image in result['photos']:
                 url = image['url']
@@ -28,6 +31,8 @@ class InaturalistBot:
                     self.file_manager.save_image(response, filetype)
                 else:
                     self.file_manager.save_image(response)
+        print(f"Found total of {self.file_manager.counter_images_saved} images!")
         return
 
-InaturalistBot()
+def start():
+    InaturalistBot()

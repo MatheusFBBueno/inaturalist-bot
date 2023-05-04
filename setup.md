@@ -61,5 +61,5 @@ poetry install
 
 ### To run Bot
 ```bash
-poetry run src/inaturalist_bot.py
+poetry run main
 ```

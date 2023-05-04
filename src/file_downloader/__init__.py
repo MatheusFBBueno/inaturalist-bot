@@ -1,5 +1,4 @@
 import os
-import src
 
 
 class FileDownloader:
