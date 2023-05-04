@@ -60,13 +60,11 @@ poetry install
 ```
 ### To specify what species and licenses to search for
 Simply edit the config.ini file located in the config folder, for example:
-<code>
-SPECIES_NAME=Lonomia obliqua  #Moth species
 
-LICENSE=CC-BY-NC  #Non-commercial license
-
+SPECIES_NAME=Lonomia obliqua  #Moth species\
+LICENSE=CC-BY-NC  #Non-commercial license\
 FILTER_LARVAE=False  #Set to True if you only want images of larvae
-</code>
+
 
 
 
