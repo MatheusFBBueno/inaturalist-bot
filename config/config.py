@@ -7,7 +7,7 @@ repo_path = os.getcwd()
 class Config:
 
     def __init__(self):
-        self.config_path = repo_path+'/config/config.ini'
+        self.config_path = repo_path.replace('src','config/config.ini')
         pass
 
     def parse_config(self):

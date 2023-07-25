@@ -12,6 +12,7 @@ class InaturalistBot:
         self.species_name = config_dict['SPECIES_NAME']
         self.license = config_dict['LICENSE']
         self.filter_larvae = config_dict['FILTER_LARVAE']
+        self.enlarge_image = config_dict['RESIZE_IMAGE']
 
         self.file_manager = FileDownloader(self.species_name)
         self.get_species_images()
@@ -24,7 +25,7 @@ class InaturalistBot:
         print("Downloading images, this might take a few minutes...")
         for result in observations['results']:
             for image in result['photos']:
-                url = image['url'].replace('square', 'medium')
+                url = image['url'].replace('square', 'medium') if self.enlarge_image else image['url']
                 response = requests.get(url)
                 if 'content-type' in response.headers.keys():
                     filetype = response.headers['content-type'].split('/')[1]
